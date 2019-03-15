@@ -72,6 +72,7 @@ autoUpdater.on('checking-for-update', () => {
 })
 autoUpdater.on('update-available', (info) => {
   sendStatusToWindow('Update available.');
+  sendStatusToWindow(JSON.stringify(info));
 })
 autoUpdater.on('update-not-available', (info) => {
   sendStatusToWindow('Update not available.');
@@ -138,5 +139,5 @@ app.on('ready', function()  {
 // autoUpdater.on('download-progress', (progressObj) => {
 // })
 // autoUpdater.on('update-downloaded', (info) => {
-//   autoUpdater.quitAndInstall();  
+//   autoUpdater.quitAndInstall();
 // })
